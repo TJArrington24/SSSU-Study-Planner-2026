@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Student Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>📚 AI Student Planner</h1>
+<nav>
+  <button data-tab="courses" class="active">Courses</button>
+  <button data-tab="plan">Weekly Plan</button>
+  <button data-tab="quiz">Quizzes</button>
+  <button data-tab="study">Study Options</button>
+</nav></header>
+<div id="auth" class="auth"></div>
+<main>
+<section id="courses" class="tab active">
+  <h2>Add a course</h2>
+  <div class="grid">
+    <input id="c-name" placeholder="Course name (e.g. Calculus II)">
+    <input id="c-grade" type="number" min="0" max="100" placeholder="Previous grade %">
+    <input id="c-target" type="number" min="0" max="100" placeholder="Target grade % (optional)">
+    <select id="c-load"><option value="1">Light workload</option><option value="2" selected>Medium workload</option><option value="3">Heavy workload</option></select>
+    <label>Next exam <input id="c-exam" type="date"></label>
+    <label>Assignment due <input id="c-due" type="date"></label>
+  </div>
+  <button id="add-course">Add course</button>
+  <label class="inline">Study hours available per week
+    <input id="hours" type="number" min="1" max="80" value="12"></label>
+  <div id="course-list"></div>
+</section>
+
+<section id="plan" class="tab">
+  <h2>Your weekly plan</h2>
+  <button id="make-plan">Generate plan</button>
+  <button id="ai-plan" class="secondary">Get AI advice (optional)</button>
+  <div id="plan-out"></div>
+  <pre id="ai-out"></pre>
+</section>
+
+<section id="quiz" class="tab">
+  <h2>Quizzes</h2>
+  <div class="grid">
+    <select id="q-course"></select>
+    <button id="start-quiz">Start quiz</button>
+  </div>
+  <div class="grid"><input id="ai-topic" placeholder="Topic for AI questions (optional)"><button id="ai-quiz" class="secondary">Generate AI questions</button></div>
+  <small id="ai-quiz-msg"></small>
+  <div id="quiz-area"></div>
+  <details><summary>Add your own question</summary>
+    <input id="n-q" placeholder="Question">
+    <input id="n-a" placeholder="Correct answer">
+    <input id="n-w1" placeholder="Wrong answer 1">
+    <input id="n-w2" placeholder="Wrong answer 2">
+    <button id="add-q">Save question</button>
+  </details>
+</section>
+
+<section id="study" class="tab">
+  <h2>Study options</h2>
+  <p>Pick a method for each course, based on how risky it looks.</p>
+  <div id="study-out"></div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="app.js"></script>
+<script src="cloud.js"></script>
+</body>
+</html>
