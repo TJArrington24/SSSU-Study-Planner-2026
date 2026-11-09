@@ -1,6 +1,6 @@
 // ===== Fill these in (Supabase > Project Settings > API). The anon key is safe to be public. =====
-const SUPABASE_URL = "";      // https://YOURPROJECT.supabase.co
-const SUPABASE_ANON_KEY = ""; // anon public key
+const SUPABASE_URL = "https://dqcuhmuizrubbwwknuqj.supabase.co/rest/v1/;      // https://YOURPROJECT.supabase.co
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxY3VobXVpenJ1YmJ3d2tudXFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE0MjIyMjgsImV4cCI6MjEwNjk5ODIyOH0._S83SaseMyogu36xikJ1Nj6zxTAfkYTYbRnc7hzHcNI"; // anon public key
 const PLAN_FN = "study-plan"; // your existing edge function name
 const QUIZ_FN = "generate-quiz";
 
